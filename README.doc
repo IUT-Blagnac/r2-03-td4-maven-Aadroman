@@ -1,0 +1,11 @@
+//Nettoyer maven
+mvn clean
+
+//compiler avec maven
+mvn compile
+
+//créer les paquets 'targets' et transforme les fichers java en excutable java
+mvn package
+
+//lancer executable java
+java -jar target/tp_qualite-1.0.jar
