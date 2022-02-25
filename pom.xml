@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -7,11 +7,10 @@
   <artifactId>tp_qualite</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
-  <properties>
-    <project.build.sourceEncoding>cp1252</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>cp1252</project.reporting.outputEncoding>
-</properties>
-
+    <properties>
+        <project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>iso-8859-1</project.reporting.outputEncoding>
+    </properties>
   <build>
     <plugins>
      <plugin>
@@ -35,9 +34,12 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.15</version>
+      <configuration>
+        <argLine>-Dfile.encoding=-Dfile.encoding=iso-8859-1</argLine>
+      </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -50,14 +52,13 @@
                 </goals>
             </execution>
         </executions>
-    </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-resources-plugin</artifactId>
-      <configuration>
-        <encoding>cp1252</encoding>
-      </configuration>
-    </plugin>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration> <source>8</source> </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
